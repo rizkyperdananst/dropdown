@@ -1,0 +1,94 @@
+:root {
+    --blue-dark: rgb(1, 1, 10);
+    --blue: rgb(3, 3, 46);
+    --green-cerah: rgb(3, 53, 34);
+    --white: white;
+}
+
+body {
+    background-color: var(--blue-dark);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    left: 550px;
+}
+
+.dropdown .drop-btn {
+    padding: 20px;
+    background-color: var(--blue);
+    font-size: 20px;
+    border: none;
+    width: 200px;
+    color: var(--white);
+    border-radius: 10px 10px 0 0;
+    animation: dropBg 3s infinite;
+}
+
+@keyframes dropBg {
+    0% {
+        background-color: var(--blue);
+    }
+    50% {
+        background-color: var(--green-cerah);
+    }
+    100% {
+        background-color: var(--blue);
+    }
+}
+
+.dropdown span:hover {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    position: absolute;
+    z-index: 1;
+    min-width: 200px;
+    background-color: var(--green-cerah);
+    display: none;
+    animation: contentBg 3s infinite;
+}
+
+@keyframes contentBg {
+    0% {
+        background-color: var(--green-cerah);
+    }
+    50% {
+        background-color: var(--blue);
+        color: var(--white);
+    }
+    100% {
+        background-color: var(--green-cerah);
+    }
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    background-color: green;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Media Responsive */
+@media (max-width: 600px) {
+    .dropdown {
+        left: 100px;
+    }
+}
+
+@media (max-width: 999px) {
+    .dropdown {
+        left: 280px;
+    }
+}
